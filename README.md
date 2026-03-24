@@ -2,8 +2,6 @@
 
 A command-line tool built in **Go** to parse log files and filter entries by keyword.
 
-
-
 ---
 
 ## Why I Built It
@@ -38,17 +36,18 @@ The goal was to improve my understanding of:
 
 ---
 
-## How to Run
+## Usage
+
+The tool accepts the `-file` flag to specify the log file to process and an optional `-keyword` flag to filter matching entries. If no keyword is provided, it defaults to `ERROR`, but this behavior can be customized by passing a different value with `-keyword`.
+
+## How to run
 
 ```bash
-go run ./cmd/logtool/main.go -file test.log -keyword ERROR
+go run ./cmd/logtool/main.go -file test.log -keyword WARNING
 ```
----
+
 ## Example Output
-```
-ERROR: database connection failed
-ERROR: timeout while calling service
-```
+![Terminal screenshot showcasing](./assets/logtool-demo.png)
 ---
 
 ## Future Improvements
